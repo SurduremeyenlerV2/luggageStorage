@@ -14,11 +14,11 @@
       },
       "oauth_client": [
         {
-          "client_id": "994248754674-qpsip7ap552vp9qhgn0svq6ovsi99vjm.apps.googleusercontent.com",
+          "client_id": "994248754674-d4h1tqls17lc7vd7lrjs1lu0aq7no6rf.apps.googleusercontent.com",
           "client_type": 1,
           "android_info": {
             "package_name": "com.example.luggage_storage",
-            "certificate_hash": "8b4d736153b2c9adffcbf87e7ef95256b2272ca1"
+            "certificate_hash": "3ceda4341ec93223a3178b3cf70577f894717b9c"
           }
         },
         {
