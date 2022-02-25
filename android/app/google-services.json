@@ -1,0 +1,47 @@
+{
+  "project_info": {
+    "project_number": "994248754674",
+    "project_id": "luggage-store-b9516",
+    "storage_bucket": "luggage-store-b9516.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:994248754674:android:3b2c292c66ae2253c4d76b",
+        "android_client_info": {
+          "package_name": "com.example.luggage_storage"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "994248754674-d4h1tqls17lc7vd7lrjs1lu0aq7no6rf.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.luggage_storage",
+            "certificate_hash": "3ceda4341ec93223a3178b3cf70577f894717b9c"
+          }
+        },
+        {
+          "client_id": "994248754674-umv7h6p41cvoi58bk9uenpf9arij5sgl.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDFJUY3mN8FgdT-n06rJ__MqkbvVfkPjTU"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "994248754674-umv7h6p41cvoi58bk9uenpf9arij5sgl.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
