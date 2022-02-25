@@ -1,17 +1,19 @@
 import 'package:flutter/material.dart';
-import 'package:luggage_storage/view/authentication/auth_view.dart';
+import 'package:luggage_storage/product/navigation/route.gr.dart';
 
 void main() {
-  runApp(const MyApp());
+  runApp( MyApp());
 }
 
 class MyApp extends StatelessWidget {
-  const MyApp({Key? key}) : super(key: key);
+   MyApp({Key? key}) : super(key: key);
 
+  final _appRouter = NavigationRoute();
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-      home: AuthView(),
+    return MaterialApp.router(
+      routeInformationParser: _appRouter.defaultRouteParser(),
+      routerDelegate: _appRouter.delegate(),
     );
   }
 }
