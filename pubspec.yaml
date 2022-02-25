@@ -16,12 +16,12 @@ dependencies:
   lottie: ^1.1.0
 
   cupertino_icons: ^1.0.2
+  firebase_core: ^1.13.1
+  firebase: ^9.0.2
 
 dev_dependencies:
   flutter_test:
     sdk: flutter
-  
-
   flutter_lints: ^1.0.0
 
 flutter:
