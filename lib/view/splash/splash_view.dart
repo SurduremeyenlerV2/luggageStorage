@@ -26,13 +26,19 @@ class _SplashViewState extends State<SplashView> {
 
   @override
   Widget build(BuildContext context) {
-    return Container();
+    return Scaffold(
+      body: Center(
+        child: Image.asset(
+          'assets/seffaflogo.png',
+        ),
+      ),
+    );
   }
 
   void initApp() async {
     await Firebase.initializeApp();
     var isLoggedIn = await _localStorageService.getBoolFromLocale(key: 'auth');
-    if (isLoggedIn==null || isLoggedIn==false) {
+    if (isLoggedIn == null || isLoggedIn == false) {
       AutoRouter.of(context).replace(const AuthView());
     } else {
       AutoRouter.of(context).replace(const HomeView());
