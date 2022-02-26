@@ -1,6 +1,9 @@
+
+import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:luggage_storage/core/service/authService/firebase_auth_service.dart';
+import 'package:luggage_storage/product/navigation/route.gr.dart';
 import 'package:luggage_storage/product/state/authCubit/auth_cubit.dart';
 
 class AuthView extends StatelessWidget {
@@ -23,6 +26,7 @@ class AuthView extends StatelessWidget {
             const snackBar = SnackBar(
               content: Text('Successful'),
             );
+            context.router.replace(const HomeView()); 
             ScaffoldMessenger.of(context).showSnackBar(snackBar);
           }
         },

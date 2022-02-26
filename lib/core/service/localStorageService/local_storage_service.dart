@@ -14,8 +14,11 @@ class LocalStorageService{
 
   Future<bool?> getBoolFromLocale({required String key}) async{
     final locale = await SharedPreferences.getInstance();
-   
-     var boolToBeGet= locale.getBool(key);
+    bool? boolToBeGet;
+    if(locale.getBool(key)!=null){
+      boolToBeGet= locale.getBool(key);
+    }
+     
      return boolToBeGet;
     
   }
