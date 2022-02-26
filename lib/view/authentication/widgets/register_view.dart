@@ -9,6 +9,7 @@ class RegisterView extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final emailController = TextEditingController();
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
@@ -44,6 +45,8 @@ class RegisterView extends StatelessWidget {
           ),
         ),
         TextField(
+          controller: emailController,
+          onChanged: (value) {},
           decoration: InputDecoration(
               contentPadding: const EdgeInsets.all(8),
               border: OutlineInputBorder(
@@ -65,7 +68,6 @@ class RegisterView extends StatelessWidget {
           ),
         ),
         TextField(
-          obscureText: true,
           enableSuggestions: false,
           autocorrect: false,
           decoration: InputDecoration(
@@ -107,9 +109,7 @@ class RegisterView extends StatelessWidget {
         Center(
           child: ElevatedButton(
             onPressed: () {
-              context
-                  .read<AuthCubit>()
-                  .signInWithGoogle();
+              context.read<AuthCubit>().signInWithGoogle();
             },
             child: const Text(
               'Sign up with Google',

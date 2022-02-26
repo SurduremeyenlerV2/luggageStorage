@@ -3,12 +3,14 @@ import 'package:cloud_firestore/cloud_firestore.dart';
 class FirebaseLuggageStorageService {
   Future<QuerySnapshot> fetchLuggageStorages({required String cityName}) async {
     try {
-      final collectionReference = await FirebaseFirestore.instance
+      final querySnaphot = await FirebaseFirestore.instance
           .collection('luggageStorages')
           .where('city', isEqualTo: cityName)
           .get();
-
-      return collectionReference;
+      for (var doc in querySnaphot.docs) {
+        doc['location'];
+      }
+      return querySnaphot;
     } catch (exception) {
       rethrow;
     }
