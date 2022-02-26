@@ -16,6 +16,7 @@ dependencies:
   lottie: ^1.1.0
   google_maps_flutter: ^2.1.1
   cupertino_icons: ^1.0.2
+  auto_route: ^3.2.4
   firebase_core: ^1.13.1
   firebase: ^9.0.2
   google_sign_in: ^5.2.4
@@ -25,6 +26,10 @@ dependencies:
 dev_dependencies:
   flutter_test:
     sdk: flutter
+  auto_route_generator: ^3.2.3
+  build_runner: ^2.1.7
+  
+
   flutter_lints: ^1.0.0
 
 flutter:
