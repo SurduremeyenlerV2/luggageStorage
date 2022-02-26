@@ -1,17 +1,21 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
 
 class FirebaseLuggageStorageService {
-  Future<QuerySnapshot> fetchLuggageStorages() async {
+  Future<QuerySnapshot> fetchLuggageStorages({required String cityName}) async {
     try {
-      final collectionReference =
-          await FirebaseFirestore.instance.collection('luggageStorages').get();
+      final collectionReference = await FirebaseFirestore.instance
+          .collection('luggageStorages')
+          .where('city', isEqualTo: cityName)
+          .get();
+
       return collectionReference;
     } catch (exception) {
       rethrow;
     }
   }
 
-  Future<void> rezerveLuggageStorage({required String luggageId}) async {
+  // THIS FUNCTION ALLOWS USER TO RESERVE ANY STORAGE
+  Future<void> reserveLuggageStorage({required String luggageId}) async {
     try {
       await FirebaseFirestore.instance.doc('/users/userId1').set({
         'rezervations': {luggageId}

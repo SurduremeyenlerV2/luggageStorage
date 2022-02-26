@@ -24,6 +24,7 @@ class FirebaseAuthService {
     return credential;
   }
 
+  /*                   */
   Future<User?> signupWithEmailAndPassword(
       {required String email, required String password}) async {
     var userCredential = await FirebaseAuth.instance
@@ -35,5 +36,4 @@ class FirebaseAuthService {
   Future<User?> checkCurrentUser() async {
     return FirebaseAuth.instance.currentUser;
   }
-  /*                   */
 }
