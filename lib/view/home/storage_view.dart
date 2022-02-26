@@ -8,33 +8,7 @@ class StorageDetailView extends StatelessWidget {
     return Scaffold(
       body: Stack(
         children: [
-          Positioned(
-            child: Padding(
-              padding: const EdgeInsets.all(8.0),
-              child: GestureDetector(
-                child: Container(
-                  decoration: BoxDecoration(
-                      borderRadius: BorderRadius.circular(15),
-                      color: Color.fromARGB(255, 104, 180, 241)),
-                  height: 60,
-                  child: const Padding(
-                    padding: const EdgeInsets.only(top: 15),
-                    child: Text(
-                      'BOOK NOW',
-                      textAlign: TextAlign.center,
-                      style: TextStyle(
-                          fontSize: 25,
-                          fontWeight: FontWeight.bold,
-                          color: Colors.white),
-                    ),
-                  ),
-                ),
-              ),
-            ),
-            bottom: 0,
-            left: 0,
-            right: 0,
-          ),
+          bookNowWidget(),
           Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
@@ -103,6 +77,36 @@ class StorageDetailView extends StatelessWidget {
           )
         ],
       ),
+    );
+  }
+
+  Positioned bookNowWidget() {
+    return Positioned(
+      child: Padding(
+        padding: const EdgeInsets.all(8.0),
+        child: GestureDetector(
+          child: Container(
+            decoration: BoxDecoration(
+                borderRadius: BorderRadius.circular(15),
+                color: Color.fromARGB(255, 104, 180, 241)),
+            height: 60,
+            child: const Padding(
+              padding: const EdgeInsets.only(top: 15),
+              child: Text(
+                'BOOK NOW',
+                textAlign: TextAlign.center,
+                style: TextStyle(
+                    fontSize: 25,
+                    fontWeight: FontWeight.bold,
+                    color: Colors.white),
+              ),
+            ),
+          ),
+        ),
+      ),
+      bottom: 0,
+      left: 0,
+      right: 0,
     );
   }
 
