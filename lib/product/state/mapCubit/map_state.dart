@@ -5,4 +5,8 @@ abstract class MapState {}
 
 class MapInitial extends MapState {}
 class MapLoading extends MapState {}
-class MapLoaded extends MapState {}
+class MapLoaded extends MapState {
+  final Set<Marker> markers;
+
+  MapLoaded({required this.markers});
+}

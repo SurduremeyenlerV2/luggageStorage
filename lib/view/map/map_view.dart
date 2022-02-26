@@ -14,20 +14,24 @@ class MapView extends StatefulWidget {
 
 class _MapViewState extends State<MapView> {
   final Completer<GoogleMapController> _controller = Completer();
-  
+
   @override
   Widget build(BuildContext context) {
     return BlocProvider(
-      create: (context) => MapCubit(),
+      create: (context) => MapCubit()..getMarkersFromCity(cityName: 'Istanbul'),
       child: BlocBuilder<MapCubit, MapState>(
         builder: (context, state) {
           if (state is MapLoading || state is MapInitial) {
-            return CircularProgressIndicator();
+            return Center(
+              child: CircularProgressIndicator(),
+            );
           } else {
+            state as MapLoaded;
             return SafeArea(
               child: Stack(
                 children: [
                   GoogleMap(
+                    markers: state.markers,
                     mapType: MapType.terrain,
                     initialCameraPosition: CameraPosition(
                       target: LatLng(1, 1),
@@ -45,7 +49,7 @@ class _MapViewState extends State<MapView> {
     );
   }
 
-   void _onMapCreated(GoogleMapController controller) {
+  void _onMapCreated(GoogleMapController controller) {
     if (!_controller.isCompleted) {
       setState(() {
         _controller.complete(controller);
