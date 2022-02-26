@@ -14,7 +14,17 @@ class FirebaseLuggageStorageService {
     }
   }
 
-  // THIS FUNCTION ALLOWS USER TO RESERVE ANY STORAGE
+  Future<QuerySnapshot> fetchAvailabelCities() async {
+    try {
+      final collectionReference =
+          await FirebaseFirestore.instance.collection('cities').get();
+      return collectionReference;
+    } catch (exception) {
+      rethrow;
+    }
+  }
+
+  // THIS FUNCTION ALLOWS USER TO RESERVE ANY STORAGE ON FIREBASES
   Future<void> reserveLuggageStorage({required String luggageId}) async {
     try {
       await FirebaseFirestore.instance.doc('/users/userId1').set({
