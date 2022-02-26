@@ -1,3 +1,5 @@
+import 'dart:developer';
+
 import 'package:bloc/bloc.dart';
 import 'package:luggage_storage/core/service/authService/firebase_auth_service.dart';
 import 'package:luggage_storage/core/service/localStorageService/local_storage_service.dart';
@@ -11,15 +13,17 @@ class AuthCubit extends Cubit<AuthState> {
   final FirebaseAuthService _firebaseAuthService = FirebaseAuthService();
   final LocalStorageService _localStorageService = LocalStorageService();
 
-  Future<void> signInWithGoogle() async{
+  Future<void> signInWithGoogle() async {
     emit(AuthLoading());
-    try{
+    try {
       await _firebaseAuthService.googleSignIn();
-      await _localStorageService.setBoolToLocale(key: 'auth',boolToBeSet: true);
+      await _localStorageService.setBoolToLocale(
+          key: 'auth', boolToBeSet: true);
+      log('successfull');
+
       emit(AuthSucces());
-    }
-    catch(e){
+    } catch (e) {
       emit(AuthFailed(e.toString()));
-    } 
+    }
   }
 }
