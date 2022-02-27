@@ -5,11 +5,12 @@ import 'package:transparent_image/transparent_image.dart';
 class CityItem extends StatelessWidget {
   const CityItem(
       {Key? key,
-      required this.cityName,
+      required this.cityName,required this.cityImgUrl,
      })
       : super(key: key);
 
   final String cityName;
+  final String cityImgUrl;
 
 
   @override

@@ -26,7 +26,6 @@ class _HomeViewState extends State<HomeView> {
         builder: (context, state) {
           if (state is HomeInitial || state is HomeLoading) {
             return Scaffold(
-
               body: Center(
                 child: CircularProgressIndicator(),
               ),
@@ -87,7 +86,10 @@ class _HomeViewState extends State<HomeView> {
                       ),
                       Align(
                           alignment: Alignment.centerLeft,
-                          child: Text('Nearby Locations',style: TextStyle(fontSize: 18),)),
+                          child: Text(
+                            'Nearby Locations',
+                            style: TextStyle(fontSize: 18),
+                          )),
                       Flexible(
                         flex: 3,
                         child: PageView.builder(
@@ -98,11 +100,12 @@ class _HomeViewState extends State<HomeView> {
                             itemCount: 4,
                             itemBuilder: (context, index) {
                               return Padding(
-                                padding: const EdgeInsets.symmetric(
-                                    vertical: 10),
+                                padding:
+                                    const EdgeInsets.symmetric(vertical: 10),
                                 child: LocationItem(
-                                     colorLeft: Colors.cyanAccent.shade400,
-                                    colorRight: Color.fromARGB(255, 178, 255, 255),
+                                    colorLeft: Colors.cyanAccent.shade400,
+                                    colorRight:
+                                        Color.fromARGB(255, 178, 255, 255),
                                     description: 'asfasfs',
                                     title: 'afasfas'),
                               );
@@ -113,23 +116,29 @@ class _HomeViewState extends State<HomeView> {
                       ),
                       Align(
                           alignment: Alignment.centerLeft,
-                          child: Text('Top Cities',style: TextStyle(fontSize: 18),)),
+                          child: Text(
+                            'Top Cities',
+                            style: TextStyle(fontSize: 18),
+                          )),
                       Flexible(
                         flex: 4,
                         child: PageView.builder(
-                            padEnds: false,
-                            pageSnapping: true,
-                            controller: topCitiesController,
-                            scrollDirection: Axis.horizontal,
-                            itemCount: 5,
-                            itemBuilder: (context, index) {
-                              return Padding(
-                                padding: const EdgeInsets.symmetric(
-                                    vertical: 10),
-                                child: CityItem(
-                                    cityName: 'London',),
-                              );
-                            }),
+                          padEnds: false,
+                          pageSnapping: true,
+                          controller: topCitiesController,
+                          scrollDirection: Axis.horizontal,
+                          itemCount: 5,
+                          itemBuilder: (context, index) {
+                            return Padding(
+                              padding: const EdgeInsets.symmetric(vertical: 10),
+                              child: CityItem(
+                                cityImgUrl:
+                                    'sadsa',
+                                cityName: 'London',
+                              ),
+                            );
+                          },
+                        ),
                       ),
                     ],
                   ),

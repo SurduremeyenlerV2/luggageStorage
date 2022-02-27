@@ -1,3 +1,5 @@
+import 'dart:developer';
+
 import 'package:bloc/bloc.dart';
 import 'package:luggage_storage/core/service/homeService/home_service.dart';
 import 'package:meta/meta.dart';
@@ -9,9 +11,11 @@ class HomeCubit extends Cubit<HomeState> {
 
   HomeService service = HomeService();
 
-  Future<void> getCities() async{
+  Future<void> getCities() async {
     emit(HomeLoading());
-   var cities= await service.getCities();
-   emit(HomeLoaded(cities));
+    var cities = await service.getCities();
+    if (cities != null) {
+      emit(HomeLoaded(cities));
+    }
   }
 }
