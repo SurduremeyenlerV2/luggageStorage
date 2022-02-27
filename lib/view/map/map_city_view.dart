@@ -28,8 +28,10 @@ class _MapViewState extends State<MapCityView> {
       child: BlocBuilder<MapCubit, MapState>(
         builder: (context, state) {
           if (state is MapLoading || state is MapInitial) {
-            return Center(
-              child: CircularProgressIndicator(),
+            return Scaffold(
+              body: Center(
+                child: CircularProgressIndicator(),
+              ),
             );
           } else {
             state as MapLoaded;

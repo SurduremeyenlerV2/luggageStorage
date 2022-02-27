@@ -37,7 +37,7 @@ class LocationItem extends StatelessWidget {
           child: Stack(
             children: [
               Container(
-                padding: const EdgeInsets.only(left: 20, top: 10, bottom: 10),
+                padding: const EdgeInsets.only(left: 20, top: 10, bottom: 5),
                 width: 150,
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
@@ -60,9 +60,9 @@ class LocationItem extends StatelessWidget {
                     ),
                     Row(
                         children: [
-                          Icon(Icons.star),
-                          Icon(Icons.star),
-                          Icon(Icons.star),
+                          Icon(Icons.star,color: Colors.yellow,),
+                          Icon(Icons.star,color: Colors.yellow,),
+                          Icon(Icons.star,color: Colors.yellow,),
                         ],
                     ),
                     

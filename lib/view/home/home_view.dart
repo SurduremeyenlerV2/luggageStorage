@@ -41,7 +41,7 @@ class _HomeViewState extends State<HomeView> {
                   AutoRouter.of(context).push(MapLocationView());
                 },
                 label: Text('Find Me'),
-                backgroundColor: Colors.cyanAccent.shade200,
+                backgroundColor: Colors.cyanAccent.shade400,
               ),
               appBar: AppBar(backgroundColor: Colors.white, elevation: 0),
               body: Padding(
