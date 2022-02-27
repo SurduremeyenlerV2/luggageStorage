@@ -3,23 +3,18 @@ import 'dart:developer';
 import 'package:cloud_firestore/cloud_firestore.dart';
 
 class HomeService {
-  Future<List<Map<String,String>>> getCities() async {
-    var mapListData = <Map<String, String>>[];
+  Future<List<Map<String, dynamic>>> getCities() async {
+    var mapListData = <Map<String, dynamic>>[];
     try {
       final cities =
           await FirebaseFirestore.instance.collection('cities').get();
-      
       for (var doc in cities.docs) {
         for (var mapData in doc.get('cities')) {
-          log(mapData);
-          print('asfdas');
-          Map<String, String> currentCity = {};
-          currentCity.addEntries(mapData);
-          mapListData.add(currentCity);
+          mapListData.add(mapData);
         }
       }
     } catch (e) {
-      return <Map<String,String>>[];
+      log('something happened');
     }
     return mapListData;
   }
