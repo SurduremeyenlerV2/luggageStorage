@@ -1,5 +1,6 @@
 
 import 'package:cloud_firestore/cloud_firestore.dart';
+import 'package:geolocator/geolocator.dart';
 import 'package:google_maps_flutter/google_maps_flutter.dart';
 import 'package:luggage_storage/core/service/mapService/map_helper.dart';
 
@@ -24,5 +25,11 @@ class MapService {
     } catch (exception) {
       rethrow;
     }
+  }
+
+  Future<Set<Marker>> fetchLuggageStoragesFromLocation() async{
+    Position currentLocation = await mapHelper.determinePosition();
+    
+    return <Marker>{};
   }
 }

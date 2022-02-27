@@ -15,4 +15,10 @@ class MapCubit extends Cubit<MapState> {
    var markers =await mapService.fetchLuggageStoragesFromCity(cityName: cityName);
     emit(MapLoaded(markers: markers));
   }
+
+  Future<void> getMarkersFromLocation() async{
+    emit(MapLoading());
+   var markers =await mapService.fetchLuggageStoragesFromLocation();
+    emit(MapLoaded(markers: markers));
+  }
 }
