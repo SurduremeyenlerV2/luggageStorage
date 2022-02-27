@@ -27,9 +27,14 @@ class FirebaseAuthService {
   /*                   */
   Future<User?> signupWithEmailAndPassword(
       {required String email, required String password}) async {
-    var userCredential = await FirebaseAuth.instance
-        .createUserWithEmailAndPassword(email: email, password: password);
-    var authUser = userCredential.user;
+    User? authUser;
+    try {
+      var userCredential = await FirebaseAuth.instance
+          .createUserWithEmailAndPassword(email: email, password: password);
+      authUser = userCredential.user;
+    } catch (e) {
+      rethrow;
+    }
     return authUser;
   }
 
