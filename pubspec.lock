@@ -50,6 +50,13 @@ packages:
       url: "https://pub.dartlang.org"
     source: hosted
     version: "3.2.3"
+  auto_size_text:
+    dependency: "direct main"
+    description:
+      name: auto_size_text
+      url: "https://pub.dartlang.org"
+    source: hosted
+    version: "3.0.0"
   bloc:
     dependency: transitive
     description:
@@ -352,13 +359,6 @@ packages:
       url: "https://pub.dartlang.org"
     source: hosted
     version: "2.1.2"
-  geopoint:
-    dependency: "direct main"
-    description:
-      name: geopoint
-      url: "https://pub.dartlang.org"
-    source: hosted
-    version: "1.0.0"
   glob:
     dependency: transitive
     description:
@@ -464,13 +464,6 @@ packages:
       url: "https://pub.dartlang.org"
     source: hosted
     version: "4.4.0"
-  latlong2:
-    dependency: transitive
-    description:
-      name: latlong2
-      url: "https://pub.dartlang.org"
-    source: hosted
-    version: "0.8.1"
   lints:
     dependency: transitive
     description:
@@ -756,13 +749,6 @@ packages:
     description: flutter
     source: sdk
     version: "0.0.99"
-  slugify:
-    dependency: transitive
-    description:
-      name: slugify
-      url: "https://pub.dartlang.org"
-    source: hosted
-    version: "2.0.0"
   source_gen:
     dependency: transitive
     description:
@@ -847,6 +833,13 @@ packages:
       url: "https://pub.dartlang.org"
     source: hosted
     version: "1.0.0"
+  transparent_image:
+    dependency: "direct main"
+    description:
+      name: transparent_image
+      url: "https://pub.dartlang.org"
+    source: hosted
+    version: "2.0.0"
   typed_data:
     dependency: transitive
     description:

@@ -15,7 +15,7 @@ import 'package:flutter/material.dart' as _i6;
 
 import '../../view/authentication/auth_view.dart' as _i2;
 import '../../view/home/home_view.dart' as _i3;
-import '../../view/map/map_view.dart' as _i4;
+import '../../view/map/map_city_view.dart' as _i4;
 import '../../view/splash/splash_view.dart' as _i1;
 
 class NavigationRoute extends _i5.RootStackRouter {

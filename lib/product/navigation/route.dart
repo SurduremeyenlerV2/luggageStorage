@@ -1,7 +1,7 @@
 import 'package:auto_route/auto_route.dart';
 import 'package:luggage_storage/view/authentication/auth_view.dart';
 import 'package:luggage_storage/view/home/home_view.dart';
-import 'package:luggage_storage/view/map/map_view.dart';
+import 'package:luggage_storage/view/map/map_city_view.dart';
 import 'package:luggage_storage/view/splash/splash_view.dart';
 
 @MaterialAutoRouter(

@@ -39,7 +39,7 @@ class _SplashViewState extends State<SplashView> {
     await Firebase.initializeApp();
     var isLoggedIn = await _localStorageService.getBoolFromLocale(key: 'auth');
     if (isLoggedIn == null || isLoggedIn == false) {
-      AutoRouter.of(context).replace(const AuthView());
+      AutoRouter.of(context).replace(const HomeView());
     } else {
       AutoRouter.of(context).replace(const HomeView());
     }
