@@ -36,7 +36,9 @@ class _HomeViewState extends State<HomeView> {
             child: Scaffold(
               resizeToAvoidBottomInset: false,
               floatingActionButton: FloatingActionButton.extended(
-                onPressed: () {},
+                onPressed: () {
+                  AutoRouter.of(context).push(MapLocationView());
+                },
                 label: Text('Find Me'),
                 backgroundColor: Colors.cyanAccent.shade200,
               ),
@@ -55,7 +57,7 @@ class _HomeViewState extends State<HomeView> {
                         ),
                       ),
                       SizedBox(
-                        height: 20,
+                        height: 40,
                       ),
                       Flexible(
                         flex: 2,
@@ -82,7 +84,7 @@ class _HomeViewState extends State<HomeView> {
                         ),
                       ),
                       SizedBox(
-                        height: 20,
+                        height: 40,
                       ),
                       Align(
                           alignment: Alignment.centerLeft,
@@ -91,7 +93,7 @@ class _HomeViewState extends State<HomeView> {
                             style: TextStyle(fontSize: 18),
                           )),
                       Flexible(
-                        flex: 3,
+                        flex: 4,
                         child: PageView.builder(
                             padEnds: false,
                             pageSnapping: true,
@@ -112,7 +114,7 @@ class _HomeViewState extends State<HomeView> {
                             }),
                       ),
                       SizedBox(
-                        height: 20,
+                        height: 40,
                       ),
                       Align(
                           alignment: Alignment.centerLeft,
@@ -121,20 +123,21 @@ class _HomeViewState extends State<HomeView> {
                             style: TextStyle(fontSize: 18),
                           )),
                       Flexible(
-                        flex: 4,
+                        flex: 6,
                         child: PageView.builder(
                           padEnds: false,
                           pageSnapping: true,
                           controller: topCitiesController,
                           scrollDirection: Axis.horizontal,
-                          itemCount: 5,
+                          itemCount: state.cities.length,
                           itemBuilder: (context, index) {
                             return Padding(
                               padding: const EdgeInsets.symmetric(vertical: 10),
                               child: CityItem(
-                                cityImgUrl:
-                                    'sadsa',
-                                cityName: 'London',
+                                cityImgUrl: state.cities[index]['cityImage'],     
+                                cityName: state.cities[index]['cityName'],
+                                lat: '41.1',
+                                long: '41.0',       
                               ),
                             );
                           },

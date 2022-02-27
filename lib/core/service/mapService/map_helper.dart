@@ -17,7 +17,7 @@ class MapHelper{
   }
 
     Future<Marker?> createMarker(String lat, String long) async{
-      String markerUrl = 'https://w7.pngwing.com/pngs/896/6/png-transparent-macropodidae-computer-icons-kangaroo-koala-kangaroo-blue-animals-carnivoran.png';
+      String markerUrl = 'https://img.icons8.com/external-icongeek26-outline-colour-icongeek26/344/external-kangaroo-origami-icongeek26-outline-colour-icongeek26.png';
       Marker _marker;
     var markerIcon = await getMarkerIcon(url: markerUrl);
 

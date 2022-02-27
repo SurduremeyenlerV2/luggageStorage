@@ -27,8 +27,8 @@ class MapService {
     }
   }
 
-  Future<Set<Marker>> fetchLuggageStoragesFromLocation() async{
-    Position currentLocation = await mapHelper.determinePosition();
+  Future<Set<Marker>> fetchLuggageStoragesFromLocation({required double lat,required double long}) async{
+    
     
     return <Marker>{};
   }

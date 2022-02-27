@@ -7,6 +7,7 @@ class MapInitial extends MapState {}
 class MapLoading extends MapState {}
 class MapLoaded extends MapState {
   final Set<Marker> markers;
+  final Position? cameraPosition;
 
-  MapLoaded({required this.markers});
+  MapLoaded({this.cameraPosition, required this.markers});
 }

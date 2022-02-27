@@ -4,17 +4,15 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:google_maps_flutter/google_maps_flutter.dart';
 import 'package:luggage_storage/product/state/mapCubit/map_cubit.dart';
 
-class MapView extends StatefulWidget {
-  final String lat;
-  final String long;
-  const MapView({Key? key, required this.lat, required this.long})
+class MapLocationView extends StatefulWidget {
+  const MapLocationView({Key? key})
       : super(key: key);
 
   @override
-  State<MapView> createState() => _MapViewState();
+  State<MapLocationView> createState() => _MapViewState();
 }
 
-class _MapViewState extends State<MapView> {
+class _MapViewState extends State<MapLocationView> {
   final Completer<GoogleMapController> _controller = Completer();
 
   @override
@@ -38,8 +36,8 @@ class _MapViewState extends State<MapView> {
                     mapType: MapType.terrain,
                     initialCameraPosition: CameraPosition(
                       target: LatLng(
-                        double.parse(widget.lat),
-                        double.parse(widget.long),
+                        state.cameraPosition!.latitude,
+                        state.cameraPosition!.longitude,
                       ),
                     ),
                     onMapCreated: (GoogleMapController controller) {

@@ -5,20 +5,22 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:google_maps_flutter/google_maps_flutter.dart';
 import 'package:luggage_storage/product/state/mapCubit/map_cubit.dart';
 
-class MapView extends StatefulWidget {
-  const MapView({Key? key}) : super(key: key);
+class MapCityView extends StatefulWidget {
+  final String lat;
+  final String long;
+  const MapCityView({Key? key,required this.lat,required this.long}) : super(key: key);
 
   @override
-  State<MapView> createState() => _MapViewState();
+  State<MapCityView> createState() => _MapViewState();
 }
 
-class _MapViewState extends State<MapView> {
+class _MapViewState extends State<MapCityView> {
   final Completer<GoogleMapController> _controller = Completer();
 
   @override
   Widget build(BuildContext context) {
     return BlocProvider(
-      create: (context) => MapCubit()..getMarkersFromCity(cityName: 'Istanbul'),
+      create: (context) => MapCubit()..getMarkersFromCity(cityName: 'Istanbul'), //TODO MAKE DYNAMİC
       child: BlocBuilder<MapCubit, MapState>(
         builder: (context, state) {
           if (state is MapLoading || state is MapInitial) {
@@ -34,7 +36,7 @@ class _MapViewState extends State<MapView> {
                     markers: state.markers,
                     mapType: MapType.terrain,
                     initialCameraPosition: CameraPosition(
-                      target: LatLng(1, 1),
+                      target: LatLng(double.parse(widget.lat), double.parse(widget.long)),
                     ),
                     onMapCreated: (GoogleMapController controller) {
                       _onMapCreated(controller);
