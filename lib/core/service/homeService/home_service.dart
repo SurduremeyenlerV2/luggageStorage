@@ -9,9 +9,7 @@ class HomeService {
     try {
       final cities =
           await FirebaseFirestore.instance.collection('cities').get();
-      log('what');
       for (var doc in cities.docs) {
-        log('doc');
         for (var mapData in doc.get('cities')) {
           mapListData.add(mapData);
         }
