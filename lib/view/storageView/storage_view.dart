@@ -1,7 +1,5 @@
-import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_rating_bar/flutter_rating_bar.dart';
-import 'package:luggage_storage/product/navigation/route.gr.dart';
 import 'package:luggage_storage/view/bookView/book_view.dart';
 import 'package:transparent_image/transparent_image.dart';
 
