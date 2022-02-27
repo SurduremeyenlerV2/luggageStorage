@@ -12,6 +12,8 @@ class MapCubit extends Cubit<MapState> {
 
   MapService mapService = MapService();
   MapHelper mapHelper = MapHelper();
+  bool isInfoShowing = false;
+  Set<Marker> markers={};
 
   Future<void> getMarkersFromCity({required String cityName}) async{
     emit(MapLoading());
@@ -22,7 +24,17 @@ class MapCubit extends Cubit<MapState> {
   Future<void> getMarkersFromLocation() async{
     emit(MapLoading());
     Position currentLocation = await mapHelper.determinePosition();
-   var markers =await mapService.fetchLuggageStoragesFromLocation(lat: currentLocation.latitude,long: currentLocation.longitude);
+    markers =await mapService.fetchLuggageStoragesFromLocation(lat: currentLocation.latitude,long: currentLocation.longitude);
     emit(MapLoaded(markers: markers,cameraPosition: currentLocation));
+  }
+
+  double changeInfoShow(){
+    if(isInfoShowing){
+      isInfoShowing=false;
+      return 0;
+    }else{
+      isInfoShowing=true;
+      return 1;
+    }
   }
 }

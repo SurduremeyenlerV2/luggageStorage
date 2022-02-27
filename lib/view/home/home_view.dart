@@ -136,8 +136,8 @@ class _HomeViewState extends State<HomeView> {
                               child: CityItem(
                                 cityImgUrl: state.cities[index]['cityImage'],     
                                 cityName: state.cities[index]['cityName'],
-                                lat: '41.1',
-                                long: '41.0',       
+                                lat: state.cities[index]['latitude'],
+                                long: state.cities[index]['longitude'],     
                               ),
                             );
                           },

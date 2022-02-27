@@ -1,5 +1,8 @@
+import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_rating_bar/flutter_rating_bar.dart';
+import 'package:luggage_storage/product/navigation/route.gr.dart';
+import 'package:luggage_storage/view/bookView/book_view.dart';
 
 class StorageDetailView extends StatelessWidget {
   @override
@@ -8,7 +11,7 @@ class StorageDetailView extends StatelessWidget {
     return Scaffold(
       body: Stack(
         children: [
-          bookNowWidget(),
+          bookNowWidget(context),
           Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
@@ -80,11 +83,18 @@ class StorageDetailView extends StatelessWidget {
     );
   }
 
-  Positioned bookNowWidget() {
+  Positioned bookNowWidget(BuildContext context) {
     return Positioned(
       child: Padding(
         padding: const EdgeInsets.all(8.0),
         child: GestureDetector(
+          onTap: () {
+            buildBookingSheet(
+              context: context,
+              dateTime: DateTime.now(),
+              time: TimeOfDay.now(),
+            );
+          },
           child: Container(
             decoration: BoxDecoration(
                 borderRadius: BorderRadius.circular(15),

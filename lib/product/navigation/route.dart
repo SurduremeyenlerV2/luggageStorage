@@ -4,6 +4,7 @@ import 'package:luggage_storage/view/home/home_view.dart';
 import 'package:luggage_storage/view/map/map_city_view.dart';
 import 'package:luggage_storage/view/map/map_location_view.dart';
 import 'package:luggage_storage/view/splash/splash_view.dart';
+import 'package:luggage_storage/view/storageView/storage_view.dart';
 
 @MaterialAutoRouter(
   replaceInRouteName: 'Route,Route',
@@ -13,6 +14,7 @@ import 'package:luggage_storage/view/splash/splash_view.dart';
     AutoRoute(page: HomeView),
     AutoRoute(page: MapCityView),
     AutoRoute(page: MapLocationView),
+    AutoRoute(page: StorageDetailView),
   ],
 )
 class $NavigationRoute {}

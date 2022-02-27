@@ -22,7 +22,7 @@ class CityItem extends StatelessWidget {
   Widget build(BuildContext context) {
     return GestureDetector(
       onTap: () {
-        AutoRouter.of(context).push(MapCityView(lat: lat, long: long));
+        AutoRouter.of(context).push(MapCityView(lat: lat, long: long,cityName: cityName));
       },
       child: Container(
         margin: const EdgeInsets.symmetric(horizontal: 5),
