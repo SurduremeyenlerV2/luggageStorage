@@ -1,4 +1,3 @@
-
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:google_maps_flutter/google_maps_flutter.dart';
 import 'package:luggage_storage/core/service/mapService/map_helper.dart';
@@ -6,7 +5,8 @@ import 'package:luggage_storage/core/service/mapService/map_helper.dart';
 class MapService {
   MapHelper mapHelper = MapHelper();
 
-  Future<Set<Marker>> fetchLuggageStoragesFromCity({required String cityName}) async {
+  Future<Set<Marker>> fetchLuggageStoragesFromCity(
+      {required String cityName}) async {
     try {
       final collectionReference = await FirebaseFirestore.instance
           .collection('luggageStorages')
@@ -20,15 +20,13 @@ class MapService {
         positions.add(latLong);
       }
       return await mapHelper.generateMarkers(markerPositions: positions);
-
     } catch (exception) {
       rethrow;
     }
   }
 
-  Future<Set<Marker>> fetchLuggageStoragesFromLocation({required double lat,required double long}) async{
-    
-    
+  Future<Set<Marker>> fetchLuggageStoragesFromLocation(
+      {required double lat, required double long}) async {
     return <Marker>{};
   }
 }

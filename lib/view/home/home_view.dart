@@ -1,6 +1,7 @@
 import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:luggage_storage/core/consts/nearByLocations.dart';
 import 'package:luggage_storage/product/navigation/route.gr.dart';
 import 'package:luggage_storage/product/state/homeCubit/home_cubit.dart';
 import 'package:luggage_storage/view/home/widgets/cities_item.dart';
@@ -99,7 +100,7 @@ class _HomeViewState extends State<HomeView> {
                             pageSnapping: true,
                             controller: nearbyLocationsController,
                             scrollDirection: Axis.horizontal,
-                            itemCount: 4,
+                            itemCount: NearByLocations.nearByLocations.length,
                             itemBuilder: (context, index) {
                               return Padding(
                                 padding:
@@ -108,8 +109,10 @@ class _HomeViewState extends State<HomeView> {
                                     colorLeft: Colors.cyanAccent.shade400,
                                     colorRight:
                                         Color.fromARGB(255, 178, 255, 255),
-                                    description: 'asfasfs',
-                                    title: 'afasfas'),
+                                    description: NearByLocations
+                                        .nearByLocations[index].description,
+                                    title: NearByLocations
+                                        .nearByLocations[index].title),
                               );
                             }),
                       ),
@@ -134,7 +137,7 @@ class _HomeViewState extends State<HomeView> {
                             return Padding(
                               padding: const EdgeInsets.symmetric(vertical: 10),
                               child: CityItem(
-                                cityImgUrl: state.cities[index]['cityImage'],     
+                                cityImgUrl: state.cities[index]['cityImage'],
                                 cityName: state.cities[index]['cityName'],
                                 lat: state.cities[index]['latitude'],
                                 long: state.cities[index]['longitude'],     
