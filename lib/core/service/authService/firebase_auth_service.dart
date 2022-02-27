@@ -36,4 +36,9 @@ class FirebaseAuthService {
   Future<User?> checkCurrentUser() async {
     return FirebaseAuth.instance.currentUser;
   }
+
+  Future<void> signOut() async {
+    await GoogleSignIn().disconnect();
+    await FirebaseAuth.instance.signOut();
+  }
 }

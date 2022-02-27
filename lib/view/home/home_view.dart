@@ -43,7 +43,20 @@ class _HomeViewState extends State<HomeView> {
                 label: Text('Find Me'),
                 backgroundColor: Colors.cyanAccent.shade400,
               ),
-              appBar: AppBar(backgroundColor: Colors.white, elevation: 0),
+              appBar: AppBar(
+                backgroundColor: Colors.white,
+                elevation: 0,
+                leading: IconButton(
+                  icon: Icon(
+                    Icons.logout,
+                    color: Colors.black,
+                  ),
+                  onPressed: () {
+                    context.read<HomeCubit>().signOut();
+                    AutoRouter.of(context).replace(AuthView());
+                  },
+                ),
+              ),
               body: Padding(
                 padding: const EdgeInsets.all(12.0),
                 child: Container(
@@ -140,7 +153,7 @@ class _HomeViewState extends State<HomeView> {
                                 cityImgUrl: state.cities[index]['cityImage'],
                                 cityName: state.cities[index]['cityName'],
                                 lat: state.cities[index]['latitude'],
-                                long: state.cities[index]['longitude'],     
+                                long: state.cities[index]['longitude'],
                               ),
                             );
                           },
