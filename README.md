@@ -1,16 +1,6 @@
 # luggage_storage
-
-A new Flutter project.
-
 ## Getting Started
 
-This project is a starting point for a Flutter application.
+Luggage Locker boş alanlarını kullanarak pasif gelir elde etmek isteyen işletmeler ile bagajlarını güvenli bir yere emanet etmek isteyen turistleri bir araya getiren bir kişisel depolama hizmetidir.
 
-A few resources to get you started if this is your first Flutter project:
-
-- [Lab: Write your first Flutter app](https://flutter.dev/docs/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://flutter.dev/docs/cookbook)
-
-For help getting started with Flutter, view our
-[online documentation](https://flutter.dev/docs), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+![WhatsApp Image 2022-02-27 at 20 40 44](https://user-images.githubusercontent.com/67066911/155893872-b6f0bb9c-2da7-40b8-adfc-bebd4ed862e9.jpeg)
