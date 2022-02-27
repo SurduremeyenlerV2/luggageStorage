@@ -24,4 +24,17 @@ class AuthCubit extends Cubit<AuthState> {
       emit(AuthFailed(e.toString()));
     }
   }
+
+  Future<void> signUpWithEmailAndPassword(
+      {required String email, required String password}) async {
+    emit(AuthLoading());
+    try {
+      await _firebaseAuthService.signupWithEmailAndPassword(
+          email: email, password: password);
+      await _localStorageService.setBoolToLocale(
+          key: 'auth', boolToBeSet: true);
+    } catch (e) {
+      emit(AuthFailed(e.toString()));
+    }
+  }
 }
