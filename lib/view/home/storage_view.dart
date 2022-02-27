@@ -91,7 +91,7 @@ class StorageDetailView extends StatelessWidget {
                 color: Color.fromARGB(255, 104, 180, 241)),
             height: 60,
             child: const Padding(
-              padding: const EdgeInsets.only(top: 15),
+              padding: EdgeInsets.only(top: 15),
               child: Text(
                 'BOOK NOW',
                 textAlign: TextAlign.center,
