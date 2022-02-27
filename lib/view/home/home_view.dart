@@ -43,7 +43,14 @@ class _HomeViewState extends State<HomeView> {
                 label: Text('Find Me'),
                 backgroundColor: Colors.cyanAccent.shade200,
               ),
-              appBar: AppBar(backgroundColor: Colors.white, elevation: 0),
+              appBar: AppBar(
+                backgroundColor: Colors.white,
+                elevation: 0,
+                leading: Icon(
+                  Icons.logout,
+                  color: Colors.black,
+                ),
+              ),
               body: Padding(
                 padding: const EdgeInsets.all(12.0),
                 child: Container(
@@ -140,7 +147,7 @@ class _HomeViewState extends State<HomeView> {
                                 cityImgUrl: state.cities[index]['cityImage'],
                                 cityName: state.cities[index]['cityName'],
                                 lat: state.cities[index]['latitude'],
-                                long: state.cities[index]['longitude'],     
+                                long: state.cities[index]['longitude'],
                               ),
                             );
                           },

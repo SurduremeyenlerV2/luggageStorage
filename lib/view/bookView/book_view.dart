@@ -76,7 +76,7 @@ buildBookingSheet(
                           width: 10,
                         ),
                         Text(
-                          "${time!.hour.toString()}:${time!.minute.toString()}",
+                          "${time!.hour.toString()}:${time.minute.toString()}",
                           style: const TextStyle(fontSize: 20),
                         ),
                       ],
@@ -131,7 +131,7 @@ buildBookingSheet(
                           width: 10,
                         ),
                         Text(
-                          "${time!.hour.toString()}:${time!.minute.toString()}",
+                          "${time.hour.toString()}:${time.minute.toString()}",
                           style: const TextStyle(fontSize: 20),
                         ),
                       ],
