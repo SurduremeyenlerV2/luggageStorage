@@ -9,8 +9,7 @@ class HomeService {
       final cities =
           await FirebaseFirestore.instance.collection('cities').get();
       for (var doc in cities.docs) {
-        fetchedCities.add(doc.get('İstanbul'));
-        log('${doc.get('İstanbul')}');
+        print(doc.get('cities'));
       }
     } catch (e) {}
     return <String, String>{};

@@ -12,6 +12,8 @@ class MyApp extends StatelessWidget {
   final _appRouter = NavigationRoute();
   @override
   Widget build(BuildContext context) {
+    HomeService homeService = HomeService();
+    homeService.getCities();
     return MaterialApp.router(
       routeInformationParser: _appRouter.defaultRouteParser(),
       routerDelegate: _appRouter.delegate(),
