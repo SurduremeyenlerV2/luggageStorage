@@ -17,7 +17,7 @@ class LocationItem extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      margin: const EdgeInsets.symmetric(horizontal:5),
+      margin: const EdgeInsets.symmetric(horizontal: 5),
       decoration: BoxDecoration(
         borderRadius: BorderRadius.circular(30),
         gradient: LinearGradient(
@@ -39,6 +39,7 @@ class LocationItem extends StatelessWidget {
                 children: [
                   Text(
                     title,
+                    maxLines: 1,
                     style: TextStyle(
                       fontSize: 12,
                       color: Colors.white,
@@ -47,19 +48,19 @@ class LocationItem extends StatelessWidget {
                   ),
                   Text(
                     description,
+                    maxLines: 1,
                     style: TextStyle(
                       fontSize: 16,
                       color: Colors.white,
                     ),
                   ),
                   Row(
-                      children: [
-                        Icon(Icons.star),
-                        Icon(Icons.star),
-                        Icon(Icons.star),
-                      ],
+                    children: [
+                      Icon(Icons.star),
+                      Icon(Icons.star),
+                      Icon(Icons.star),
+                    ],
                   ),
-                  
                   Row(
                     mainAxisAlignment: MainAxisAlignment.start,
                     children: [
@@ -103,7 +104,6 @@ class LocationItem extends StatelessWidget {
                       SizedBox(
                         width: 10,
                       ),
-                      
                     ],
                   ),
                 ],
