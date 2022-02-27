@@ -19,8 +19,6 @@ class AuthCubit extends Cubit<AuthState> {
       await _firebaseAuthService.googleSignIn();
       await _localStorageService.setBoolToLocale(
           key: 'auth', boolToBeSet: true);
-      log('successfull');
-
       emit(AuthSucces());
     } catch (e) {
       emit(AuthFailed(e.toString()));
