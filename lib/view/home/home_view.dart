@@ -46,9 +46,15 @@ class _HomeViewState extends State<HomeView> {
               appBar: AppBar(
                 backgroundColor: Colors.white,
                 elevation: 0,
-                leading: Icon(
-                  Icons.logout,
-                  color: Colors.black,
+                leading: IconButton(
+                  icon: Icon(
+                    Icons.logout,
+                    color: Colors.black,
+                  ),
+                  onPressed: () {
+                    context.read<HomeCubit>().signOut();
+                    AutoRouter.of(context).replace(AuthView());
+                  },
                 ),
               ),
               body: Padding(
